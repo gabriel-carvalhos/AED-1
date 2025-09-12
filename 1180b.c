@@ -1,14 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    int n, menor = 9999, posicao = 0, *p;
+    int n, menor, posicao = 0, *p;
 
     scanf("%d", &n);
 
     int x[n];
     p = x;
 
-    for (int i = 0; i < n; i++) {
+    scanf("%d", p);
+    menor = *p;
+    posicao = 0;
+    p++;
+
+    for (int i = 1; i < n; i++) {
         scanf("%d", p);
 
         if (*p < menor) {

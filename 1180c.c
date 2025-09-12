@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int *n, *menor, *posicao, *x, *i;
+    int *n, *menor, *posicao, *x, *p, *i;
 
     n = (int *) malloc(sizeof(int));
     menor = (int *) malloc(sizeof(int));
@@ -12,18 +12,22 @@ int main() {
     scanf("%d", n);
 
     x = (int *) malloc(*n * sizeof(int));
+    p = x;
 
-    scanf("%d", &x[0]);
-    *menor = x[0];
+    scanf("%d", p);
+    *menor = *p;
     *posicao = 0;
+    p++;
 
-    for (*i = 1; *i < *n; *i = *i + 1) {
-        scanf("%d", &x[*i]);
-
-        if (x[*i] < *menor) {
-            *menor = x[*i];
+    for (*i = 1; *i < *n; *i = *i + 1) {        
+        scanf("%d", p);
+        
+        if (*p < *menor) {
+            *menor = *p;
             *posicao = *i;
         }
+
+        p++;
     }
 
     printf("Menor valor: %d\n", *menor);
