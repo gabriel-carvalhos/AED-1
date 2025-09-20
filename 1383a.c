@@ -1,12 +1,11 @@
 #include <stdio.h>
 
-int m[9][9];
-
-int verificarLinha(int);
-int verificarColuna(int);
-int verificarRegiao(int);
+int verificarLinha(int m[][9], int);
+int verificarColuna(int m[][9], int);
+int verificarRegiao(int m[][9], int);
 
 int main() {
+    int m[9][9];
     int n, valido;
 
     scanf("%d", &n);
@@ -22,7 +21,7 @@ int main() {
     
         valido = 1;
         for (int i = 0; i < 9; i++) {
-            if (!verificarLinha(i) || !verificarColuna(i) || !verificarRegiao(i)) {
+            if (!verificarLinha(m, i) || !verificarColuna(m, i) || !verificarRegiao(m, i)) {
                 valido = 0;
                 break;
             }
@@ -38,7 +37,7 @@ int main() {
     return 0;
 }
 
-int verificarLinha(int i) {
+int verificarLinha(int m[][9], int i) {
     int vistos[10] = {0};
 
     for (int j = 0; j < 9; j++) {
@@ -52,7 +51,7 @@ int verificarLinha(int i) {
     return 1;
 }
 
-int verificarColuna(int j) {
+int verificarColuna(int m[][9], int j) {
     int vistos[10] = {0};
 
     for (int i = 0; i < 9; i++) {
@@ -66,7 +65,7 @@ int verificarColuna(int j) {
     return 1;
 }
 
-int verificarRegiao(int r) {
+int verificarRegiao(int m[][9], int r) {
     int vistos[10] = {0};
     int linha_inicial = (r / 3) * 3;
     int coluna_inicial = (r % 3) * 3;
