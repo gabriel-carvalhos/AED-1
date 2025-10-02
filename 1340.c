@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct {
+typedef struct cel {
     int conteudo;
     struct cel *seg;
 } cel;
 
 void empilha(cel *, int);
-void mostraPilha(cel *);
+void empilha(cel *, int);
 
 int main() {
     int n, comando, x;
@@ -32,8 +32,6 @@ int main() {
 
         }
 
-        mostraPilha(pilha);
-
         printf("Digite N: ");
         scanf("%d", &n);
     }
@@ -47,8 +45,6 @@ void empilha(cel *pilha, int x) {
     pilha->seg = nova;
 }
 
-void mostraPilha(cel *pilha) {
-    for (cel *p = pilha; p != NULL; p = p + 1) {
-        printf("%d\n", p->conteudo);
-    }
+void desempilha(cel *pilha) {
+    cel *q;
 }
