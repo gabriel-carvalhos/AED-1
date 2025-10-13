@@ -72,13 +72,18 @@ int main() {
                             int direita = 2 * j + 2;
                             int maior = j;
                             
-                            if (esquerda < tamanho_fila_prioridade && fila_prioridade[esquerda] > fila_prioridade[maior])
+                            if (esquerda < tamanho_fila_prioridade && fila_prioridade[esquerda] > fila_prioridade[maior]) {
                                 maior = esquerda;
-                            if (direita < tamanho_fila_prioridade && fila_prioridade[direita] > fila_prioridade[maior])
+                            }
+                            
+                            if (direita < tamanho_fila_prioridade && fila_prioridade[direita] > fila_prioridade[maior]) {
                                 maior = direita;
+                            }
                             
-                            if (maior == j) break;
-                            
+                            if (maior == j) {
+                                break;
+                            }
+
                             int temp = fila_prioridade[j];
                             fila_prioridade[j] = fila_prioridade[maior];
                             fila_prioridade[maior] = temp;
