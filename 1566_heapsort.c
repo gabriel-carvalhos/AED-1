@@ -1,3 +1,5 @@
+// nao finalizado
+
 #include <stdio.h>
 #include <stdlib.h>
 
