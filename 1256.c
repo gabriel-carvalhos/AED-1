@@ -1,8 +1,3 @@
-// nao finalizado
-
-// matriz MxM
-// o elemento 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
